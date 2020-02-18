@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="mt-4 row justify-content-center">
+    <div class="col-8" >
+      <h1 style="color: #337ab7">All articles</h1>
+      <div><%= link_to "+Create new article", new_article_path, class: "btn btn-primary" %></div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="mt-4 row justify-content-center">
+    <div class="col-8">
+      <% @articles.each do |article| %>
+        <h2 style="color: #337ab7; font-family: Helvetica, Arial, sans-serif"><%= link_to article.title, article_path(article.id) %></h2>
+        <p><%= article.content %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
